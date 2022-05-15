@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/config.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:lighthouse_delivery/screens/company_screen.dart';
 import 'package:lighthouse_delivery/screens/login_screen.dart';
+import 'package:lighthouse_delivery/widgets/custom_drawer.dart';
 import 'package:widget_and_text_animator/widget_and_text_animator.dart';
 
 import '../widgets/delivery_card.dart';
@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: CustomDrawer(),
       appBar: AppBar(
         title: Text("Delivery"),
         actions: [
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(onPressed: (){
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => CreateDeliveryScreen()));
           }, icon: Icon(Icons.backpack_outlined), color: Colors.white70,),          IconButton(onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeliveryUserScreen()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CompanyScreen()));
           }, icon: Icon(Icons.delivery_dining), color: Colors.white70,),
         ],
 
