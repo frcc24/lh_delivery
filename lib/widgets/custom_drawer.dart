@@ -1,20 +1,28 @@
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 import '../tiles/drawer_tile.dart';
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
 
-  //final PageController pageController;
 
-  const CustomDrawer( );
+  CustomDrawer( );
+
+  @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
 
   Widget _buildDrawerBack() => Container(
-    decoration: const BoxDecoration(
+
+    decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 194, 191, 191),
-            Color.fromARGB(255, 8, 32, 50)
+            Theme.of(context).backgroundColor ,
+            Theme.of(context).secondaryHeaderColor   ,
+
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomCenter,
