@@ -12,7 +12,7 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Text("Criar entrega"),
       ),
@@ -24,17 +24,32 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
             Row(
               children: [
                 Card(
-                  color: Colors.white70,
-                  child: SizedBox(height: 70, width: 110, child: Icon(Icons.bike_scooter),),
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  child: SizedBox(height: 70, width: 110,
+                    child: Icon( Icons.bike_scooter,
+                      size: 50,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
                 ),
                 Card(
-                  color: Colors.white70,
-                  child: SizedBox(height: 70, width: 110, child: Icon(Icons.car_rental),),
-                ),                Card(
-                  color: Colors.white70,
-                  child: SizedBox(height: 70, width: 110, child: Icon(Icons.airplanemode_active_outlined),),
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  child: SizedBox(height: 70, width: 110,
+                    child: Icon( Icons.airplanemode_active_outlined,
+                      size: 50,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
                 ),
-
+                Card(
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  child: SizedBox(height: 70, width: 110,
+                    child: Icon( Icons.car_rental,
+                      size: 50,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 16,),
@@ -53,12 +68,12 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
                   }
                 },
                 obscureText: false,
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.location_on_outlined, color: Colors.blueGrey,),
+                decoration: InputDecoration(
+                    icon: Icon(Icons.location_on_outlined, color: Theme.of(context).primaryColor,),
                     hintText: "Seu endereco ja preenchido",
                     focusColor: Colors.red,
                     border: InputBorder.none,
-                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 16)
+                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.black54, fontSize: 16)
                 ),
               ),
             ),
@@ -78,12 +93,12 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
                   }
                 },
                 obscureText: false,
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.location_on, color: Colors.blueGrey,),
+                decoration:  InputDecoration(
+                    icon: Icon(Icons.location_history_outlined, color: Theme.of(context).primaryColor),
                     hintText: "Endereco destino",
                     focusColor: Colors.red,
                     border: InputBorder.none,
-                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 16)
+                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.black54, fontSize: 16)
                 ),
               ),
             ),
@@ -105,12 +120,12 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
                   }
                 },
                 obscureText: false,
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.backpack_outlined, color: Colors.blueGrey,),
+                decoration: InputDecoration(
+                    icon: Icon(Icons.backpack_outlined, color: Theme.of(context).primaryColor,),
                     hintText: "Quantidade de pacotes",
                     focusColor: Colors.red,
                     border: InputBorder.none,
-                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 16)
+                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.black54, fontSize: 16)
                 ),
               ),
             ),
@@ -130,12 +145,12 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
                   }
                 },
                 obscureText: false,
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.info_outline, color: Colors.blueGrey,),
+                decoration: InputDecoration(
+                    icon: Icon(Icons.info_outline, color: Theme.of(context).primaryColor,),
                     hintText: "Observações",
                     focusColor: Colors.red,
                     border: InputBorder.none,
-                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 16)
+                    hintStyle: TextStyle(fontStyle: FontStyle.italic, color: Colors.black54 , fontSize: 16)
                 ),
               ),
             ),
@@ -149,7 +164,7 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
               padding: EdgeInsets.only(left: 10.0, right: 10, top: 5, bottom: 5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Theme.of(context).primaryColorDark,
+                color: Theme.of(context).primaryColor,
               ),
               margin: const EdgeInsets.only(bottom: 10.0),
               child: FlatButton(
