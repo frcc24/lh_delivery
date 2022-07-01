@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:lighthouse_delivery/models/delivery.dart';
 
 class DeliveryCard extends StatelessWidget {
-  const DeliveryCard({Key? key}) : super(key: key);
+  Delivery delivery;
+
+  DeliveryCard({Key? key,  required this.delivery}) : super(key: key);
+
+  //get name => null;
 
   @override
   Widget build(BuildContext context) {
@@ -9,16 +14,17 @@ class DeliveryCard extends StatelessWidget {
       child: Card(
         color: Colors.red,
         child: Card(
-          margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+          margin: EdgeInsets.fromLTRB(5, 0, 0, 2),
           child: Column(
             children: [
               Row(
                 children: [
                   SizedBox(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 18.0),
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
                           child: Text("\$ 3,00" , style: TextStyle(fontSize: 20, color: Colors.grey),),
                         ),
                         Padding(
@@ -49,7 +55,7 @@ class DeliveryCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Icon( Icons.location_on_outlined, ),
-                            Text("Samucas - R. Joao P. Costa 338")
+                            Text("${delivery.companyName} - R. Joao P. Costa 338")
                           ],
                         ),
                         Row(

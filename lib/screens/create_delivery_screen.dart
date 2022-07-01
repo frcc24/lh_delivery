@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lighthouse_delivery/models/delivery.dart';
 
 class CreateDeliveryScreen extends StatefulWidget {
-  const CreateDeliveryScreen({Key? key}) : super(key: key);
+  void Function() insert;
+  List<Delivery> deliveryList;
+
+  CreateDeliveryScreen({Key? key, required  this.insert, required this.deliveryList}) : super(key: key);
 
   @override
   State<CreateDeliveryScreen> createState() => _CreateDeliveryScreenState();
@@ -169,9 +173,10 @@ class _CreateDeliveryScreenState extends State<CreateDeliveryScreen> {
               margin: const EdgeInsets.only(bottom: 10.0),
               child: FlatButton(
                 onPressed: (){
-
+                  widget.deliveryList.insert(0, Delivery("teste"));
+                  widget.insert();
+                  Navigator.pop(context);
                 },
-
                 child: Padding(
                   padding: const EdgeInsets.all(14.0),
                   child: Text("Criar Entrega", style:
