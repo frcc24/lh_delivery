@@ -27,10 +27,12 @@ class CompanyScreen extends StatelessWidget {
               ),
               SizedBox(height: 18,),
               Card(
-                color: Colors.orangeAccent,
+                elevation: 5,
+                color: Theme.of(context).cardTheme.color,
                 child: Padding(
                   padding: const EdgeInsets.all(38.0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
@@ -38,6 +40,7 @@ class CompanyScreen extends StatelessWidget {
                           Text("R\$ 31,30"),
                         ],
                       ),
+
                       Icon(Icons.account_balance_wallet_outlined, size: 50,)
                     ],
                   ),
@@ -46,21 +49,34 @@ class CompanyScreen extends StatelessWidget {
               SizedBox(height: 18,),
               Text("Meios de transporte Aceitos"),
               SizedBox(height: 18,),
-              Row(
-                children: [
-                  Card(
-                    color: Colors.white70,
-                    child: SizedBox(height: 70, width: 110, child: Icon(Icons.bike_scooter),),
-                  ),
-                  Card(
-                    color: Colors.white70,
-                    child: SizedBox(height: 70, width: 110, child: Icon(Icons.car_rental),),
-                  ),                Card(
-                    color: Colors.white70,
-                    child: SizedBox(height: 70, width: 110, child: Icon(Icons.airplanemode_active_outlined),),
-                  ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Card(
+                      color: Theme.of(context).cardColor,
+                      child: Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Icon(Icons.bike_scooter),
+                      ),
+                    ),
+                    Card(
+                      color: Theme.of(context).cardColor,
+                      child: Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Icon(Icons.car_rental),
+                      ),
+                    ),
+                    Card(
+                      color: Theme.of(context).cardColor,
+                      child: Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Icon(Icons.airplanemode_active_outlined),
+                      ),
+                    ),
 
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 18,),
               Text("Sua Reputação"),
@@ -70,9 +86,10 @@ class CompanyScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 55.0, vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10),
                         child: Column(
                           children: [
                             Icon(Icons.emoji_emotions_outlined, size: 70, color: Colors.green,),
@@ -81,7 +98,7 @@ class CompanyScreen extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 55.0, vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10),
                         child: Column(
                           children: [
                             Icon(Icons.emoji_emotions, size: 70, color: Colors.redAccent,),

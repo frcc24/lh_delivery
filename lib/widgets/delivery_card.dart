@@ -12,7 +12,7 @@ class DeliveryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Card(
-        color: Colors.red,
+        color: Theme.of(context).primaryColor,
         child: Card(
           margin: EdgeInsets.fromLTRB(5, 0, 0, 2),
           child: Column(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:lighthouse_delivery/screens/company_screen.dart';
+import 'package:lighthouse_delivery/screens/company_screen/company_screen.dart';
 import 'package:lighthouse_delivery/screens/delirey_datails/delivery_details_page.dart';
 import 'package:lighthouse_delivery/widgets/custom_drawer.dart';
 
 import '../models/delivery.dart';
 import '../widgets/delivery_card.dart';
-import 'create_delivery_screen.dart';
+import 'create_delivery/create_delivery_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
