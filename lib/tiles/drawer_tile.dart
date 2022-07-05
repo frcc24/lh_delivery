@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screens/create_delivery/create_delivery_screen.dart';
-import '../screens/delivery_user_screen.dart';
+import '../screens/delivery_user/delivery_user_screen.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
 class DrawerTile extends StatelessWidget {
@@ -16,18 +15,15 @@ class DrawerTile extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: (){
+        onTap: () {
           Navigator.of(context).pop();
 
-          if (page == 0){
+          if (page == 0) {
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => CreateDeliveryScreen()));
+          } else if (page == 1) {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => DeliveryUserScreen()));
           }
-          else if ( page == 1){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeliveryUserScreen()));
-          }
-
-
-
         },
         child: Container(
           height: 60.0,
@@ -36,17 +32,19 @@ class DrawerTile extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(this.icon,
-                 // color: controller.page?.round() == page ? Theme.of(context). primaryColor : Theme.of(context). secondaryHeaderColor,
+                child: Icon(
+                  this.icon,
+                  // color: controller.page?.round() == page ? Theme.of(context). primaryColor : Theme.of(context). secondaryHeaderColor,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(text,
+                child: Text(
+                  text,
                   style: TextStyle(
                     fontSize: 16,
                     //color: controller.page?.round() == page ? Theme.of(context). primaryColor : Theme.of(context). secondaryHeaderColor,
-                  ) ,
+                  ),
                 ),
               ),
             ],

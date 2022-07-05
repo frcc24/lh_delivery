@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:lighthouse_delivery/colors_schemas.dart';
+import 'package:lighthouse_delivery/widgets/custom_transport_card.dart';
 
-import '../../colors_schemas.dart';
-import '../../widgets/custom_transport_card.dart';
+class DeliveryUserScreen extends StatefulWidget {
+  const DeliveryUserScreen({Key? key}) : super(key: key);
 
-class CompanyScreen extends StatelessWidget {
-  const CompanyScreen({Key? key}) : super(key: key);
+  @override
+  State<DeliveryUserScreen> createState() => _DeliveryUserScreenState();
+}
 
+class _DeliveryUserScreenState extends State<DeliveryUserScreen> {
   @override
   Widget build(BuildContext context) {
     final textStyle = TextStyle(
@@ -17,7 +21,7 @@ class CompanyScreen extends StatelessWidget {
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
           centerTitle: false,
-          title: Text("Samucas Bar e Restaurante"),
+          title: Text("Bem vindo, Samuel Cesário"),
           actions: [],
         ),
         body: Column(
@@ -35,7 +39,7 @@ class CompanyScreen extends StatelessWidget {
                     child: CircleAvatar(
                       backgroundColor: Colors.white12,
                       child: Icon(
-                        Icons.store,
+                        Icons.person,
                         size: 50,
                         color: Colors.white,
                       ),
@@ -68,11 +72,11 @@ class CompanyScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  " Total a pagar,",
+                                  "Seu Saldo,",
                                   style: textStyle,
                                 ),
                                 Text(
-                                  "R\$ 231,30",
+                                  "R\$ 200,00",
                                   style: textStyle,
                                 ),
                               ],
@@ -90,7 +94,7 @@ class CompanyScreen extends StatelessWidget {
                   SizedBox(
                     height: 12,
                   ),
-                  Text("Seus meios de transporte aceitos"),
+                  Text("Seus meios de transporte"),
                   SizedBox(
                     height: 12,
                   ),
