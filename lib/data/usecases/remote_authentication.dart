@@ -1,6 +1,7 @@
-import 'package:lighthouse_delivery/screens/login/authentication.dart';
-
-import '../http/http_client.dart';
+import '../../domain//entities/entities.dart';
+import '../../domain/helpers/helpers.dart';
+import '../../domain/usecases/usecases.dart';
+import '../http/http.dart';
 
 class RemoteAuthentication {
   final HttpClient httpClient;
@@ -8,9 +9,17 @@ class RemoteAuthentication {
 
   RemoteAuthentication({required this.httpClient, required this.url});
 
-  Future<void>? auth(AuthenticationParams params) async {
+  Future<AccountEntity?> auth(AuthenticationParams params) async {
     final body = RemoteAuthenticationParams.fromDomain(params).toJson();
-    httpClient.request(url: url, method: 'post', body: body);
+    try {
+      final httpResponse =
+          await httpClient.request(url: url, method: 'post', body: body);
+      return AccountEntity.fromJson(httpResponse!);
+    } on HttpError catch (error) {
+      throw error == HttpError.unauthorized
+          ? DomainError.invalidCredentials
+          : DomainError.unexpected;
+    }
   }
 }
 
